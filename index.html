@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        .frame {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 8rem;
+            width: 82rem;
+            height: 25rem;
+            max-height: 30rem;
+            max-width: 84rem;
+        }
+
+        .piano-key {
+            stroke: black;
+            stroke-width: 2;
+            transition: filter 0.2s;
+        }
+
+        .piano-key:hover {
+            filter: brightness(150%);
+        }
+
+        .piano-black-key {
+            fill: grad;           
+            transition: filter 0.2s;
+        }
+
+        .piano-black-key:hover {
+            fill: url(#blackKeyGradient);
+            transition: cubic-bezier(1, 0, 0, 1);
+        }
+    
+
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <svg width="55.5%" height="99%" xmlns="http://www.w3.org/2000/svg" id="piano-svg">
+            <!-- Background Rectangle -->
+            <rect width="100%" height="100%" fill="white"/>
+
+            <!-- White Keys -->
+            <rect x="10px" y="22px" width="100px" height="363px" fill="url(#whiteKeyGradient)" class="piano-key 00" />
+            <rect x="111px" y="22px" width="100px" height="363px" fill="url(#whiteKeyGradient)" class="piano-key 01"/>
+            <rect x="212px" y="22px" width="100px" height="363px" fill="url(#whiteKeyGradient)" class="piano-key 02"/>
+            <rect x="313px" y="22px" width="100px" height="363px" fill="url(#whiteKeyGradient)" class="piano-key 03"/>
+            <rect x="414px" y="22px" width="100px" height="363px" fill="url(#whiteKeyGradient)" class="piano-key 04"/>
+            <rect x="515px" y="22px" width="100px" height="363px" fill="url(#whiteKeyGradient)" class="piano-key 05"/>
+            <rect x="616px" y="22px" width="100px" height="363px" fill="url(#whiteKeyGradient)" class="piano-key 06"/>
+
+            <!-- Black Keys -->
+            <rect x="75px" y="11px" width="65px" height="230px" fill="black" class="piano-black-key"/>
+            <rect x="178px" y="11px" width="65px" height="230px" fill="black" class="piano-black-key"/>
+            <rect x="379px" y="11px" width="65px" height="230px" fill="black" class="piano-black-key"/>
+            <rect x="480px" y="11px" width="65px" height="230px" fill="black" class="piano-black-key"/>
+            <rect x="582px" y="11px" width="65px" height="230px" fill="black" class="piano-black-key"/>
+            
+            <!-- Gradient definition for white keys -->
+            <defs>
+                <linearGradient id="whiteKeyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(200,200,200);stop-opacity:1" />
+                </linearGradient>
+                <linearGradient id="blackKeyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color: black; stop-opacity: 1" />
+                    <stop offset="100%" style="stop-color: darkgray; stop-opacity: 1" />
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.49/build/Tone.js"></script>
+    <script type="module" src="index.js"></script>
+
+
+    <!-- <script>
+        Tone.start();
+
+        const player = new Tone.Player().toDestination();
+
+        function playNote(note_path) {
+            
+            player.url = note_path;
+            player.start();
+        }
+    </script> -->
+</body>
+</html>
